@@ -29,16 +29,19 @@ const LoginPage = () => {
             />
           </div>
           <center>
-            <button className="btn btn-primary btn-sm mt-3 btn-block">
+            <button className="btn btn-danger btn-sm mt-3 btn-block">
               Iniciar sesión
               <i className="fa-solid fa-paper-plane mx-1"></i>
             </button>
-            <div className="d-flex justify-content-center gap-1">
-              <button className="btn btn-primary btn-sm mt-2 btn-block">
+            <div
+              className="d-flex justify-content-center gap-1 mt-1"
+              id="btn_social_network"
+            >
+              <button className="btn  btn-danger btn-sm mt-2 btn-block">
                 Iniciar con Google
                 <i className="fa-brands fa-google mx-1"></i>
               </button>
-              <button className="btn btn-primary btn-sm mt-2 btn-block">
+              <button className="btn  btn-danger btn-sm mt-2 btn-block">
                 Iniciar con Facebook
                 <i className="fa-brands fa-facebook mx-1"></i>
               </button>

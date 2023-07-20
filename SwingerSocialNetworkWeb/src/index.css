@@ -6,7 +6,8 @@
   --red04: #a30d17;
   --red05: #e31220;
   --red06: #fde4db;
-  --boxshadow: 0px 0px 10px rgba(128, 128, 128, 0.9);
+  --boxshadow: 0px 0px 10px rgba(204, 65, 65, 0.9);
+  --radialcolor: radial-gradient(#272727, #1a1919, #000);
 }
 
 /*INIT override css bootstrap*/
@@ -14,9 +15,16 @@
   border-radius: 25px;
   background: transparent;
   border-color: var(--red05);
+  color: var(--red06);
 }
 
 .btn:hover {
+  background: var(--red04);
+  border-color: var(--red00);
+  color: var(--red06);
+}
+
+.btn:focus {
   background: var(--red04);
   border-color: var(--red00);
 }
@@ -49,7 +57,7 @@ h6 {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: radial-gradient(#000, #1b1b1b) !important;
+  background: var(--radialcolor);
 }
 
 .card_local {
@@ -64,7 +72,7 @@ h6 {
 
 .card_welcome {
   position: relative;
-  max-width: 350px;
+  max-width: 450px;
   top: -7%;
   margin-right: 1em;
   padding-right: 1em;
@@ -87,15 +95,22 @@ h6 {
 @media (max-width: 850px) {
   .publicLayout {
     flex-direction: column;
-    padding: 10px;
+    padding: 1rem;
   }
   .card_local {
     background: linear-gradient(var(--red02), var(--red03));
-    min-width: 200px;
+    min-width: 380px;
     box-shadow: var(--boxshadow);
   }
   .card_welcome {
+    display: none;
     top: 0px;
-    min-width: 200px;
+    min-width: 400px;
+  }
+  #btn_social_network {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 }
