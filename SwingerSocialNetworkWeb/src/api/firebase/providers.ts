@@ -8,4 +8,6 @@ export const singInWithGoogle = async () => {
   return result.user;
 };
 
-export const logoutFirebase = async () => await FirebaseAuth.signOut();
+export const logoutFirebase = async () => {
+  await FirebaseAuth.signOut();
+};
