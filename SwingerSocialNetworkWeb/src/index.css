@@ -8,6 +8,7 @@
   --red06: #fde4db;
   --boxshadow: 0px 0px 10px rgba(204, 65, 65, 0.9);
   --radialcolor: radial-gradient(#272727, #1a1919, #000);
+  --linearColor: linear-gradient(var(--red02), var(--red03));
 }
 
 /*INIT override css bootstrap*/
@@ -48,6 +49,7 @@ h2,
 h3,
 h4,
 h5,
+a,
 h6 {
   color: var(--red06) !important;
 }
@@ -60,8 +62,13 @@ h6 {
   background: var(--radialcolor);
 }
 
+.privateLayout {
+  background: var(--radialcolor);
+  min-height: 100vh;
+}
+
 .card_local {
-  background: linear-gradient(var(--red02), var(--red03));
+  background: var(--linearColor);
   min-width: 450px;
   box-shadow: var(--boxshadow);
 }
@@ -90,6 +97,11 @@ h6 {
   display: block;
   border: solid 1px;
   border-color: #fff;
+}
+
+
+.bgradial{
+  background: var(--linearColor);
 }
 
 @media (max-width: 850px) {

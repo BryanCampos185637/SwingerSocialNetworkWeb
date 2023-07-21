@@ -1,6 +1,10 @@
+import { useAuthStore } from "../../hooks";
 import { CardAccount } from "./components/CardAccount";
 
 const LoginPage = () => {
+
+  const {onLoginWhitGoogle}= useAuthStore();
+
   return (
     <>
       <div className="card_welcome">
@@ -37,7 +41,7 @@ const LoginPage = () => {
               className="d-flex justify-content-center gap-1 mt-1"
               id="btn_social_network"
             >
-              <button className="btn  btn-danger btn-sm mt-2 btn-block">
+              <button type="button" className="btn  btn-danger btn-sm mt-2 btn-block" onClick={onLoginWhitGoogle}>
                 Iniciar con Google
                 <i className="fa-brands fa-google mx-1"></i>
               </button>
