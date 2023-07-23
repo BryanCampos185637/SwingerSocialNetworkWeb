@@ -1,4 +1,4 @@
-import { useAuthStore, useCheckAuth } from "../../hooks";
+import { useAuthStore } from "../../hooks";
 
 const HomePage = () => {
   const { displayName } = useAuthStore();

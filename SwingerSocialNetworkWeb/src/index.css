@@ -33,7 +33,26 @@
 .form-control {
   border-radius: 25px;
 }
+
+.list-group-item {
+  background: transparent;
+}
 /*END override css bootstrap*/
+
+.chat {
+  border-color: transparent !important;
+  cursor: pointer;
+}
+
+.chatSelect{
+  background: var(--linearColor);
+  border-radius: 5px;
+  box-shadow: var(--boxshadow);
+}
+
+.boxChat{
+  /* background: var(--radialcolor); */
+}
 
 body {
   margin: 0%;
@@ -99,9 +118,17 @@ h6 {
   border-color: #fff;
 }
 
+.bgtransparent {
+  background: transparent;
+}
 
-.bgradial{
+.bgradial {
   background: var(--linearColor);
+}
+
+.iconPerfil {
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 @media (max-width: 850px) {
