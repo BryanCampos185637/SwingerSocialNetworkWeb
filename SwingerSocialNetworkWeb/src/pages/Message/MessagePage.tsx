@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { useAuthStore } from "../../hooks";
 
-const mocks = [1, 2, 3, 4, 57, 8, 89, 84];
+import { useAuthStore } from "../../hooks";
+import { PhotoIcon } from "../../components";
+
+const mocks = [1, 2, 3, 4];
 
 const MessagePage = () => {
   const { photoURL, displayName } = useAuthStore();
@@ -15,19 +17,18 @@ const MessagePage = () => {
   return (
     <div className="row">
       <div className="col-sm-4">
-        <h4>
-          Mensajes <i className="fa-solid fa-comment"></i>
-        </h4>
+        <h4>Chat</h4>
         <hr className="separator" />
         <ul className="list-group bgtransparent">
-          <li className="list-group-item chat">
+          <li className="list-group-item chat_msg">
+            <label htmlFor="">Buscar</label>
             <input
               type="search"
               placeholder="Buscar persona"
               className="form-control"
             />
           </li>
-          {mocks.map((item, index) => (
+          {mocks.map((item) => (
             <li
               className={`list-group-item chat ${
                 item === idUser && "chatSelect"
@@ -37,12 +38,10 @@ const MessagePage = () => {
             >
               <div className="d-flex justify-content-between">
                 <div className="d-flex align-items-center ">
-                  <img
+                  <PhotoIcon
                     src={photoURL!}
                     alt={displayName!}
                     className="iconPerfil"
-                    width={35}
-                    height={35}
                   />
                   <div>
                     <span className="mx-2">
@@ -62,41 +61,37 @@ const MessagePage = () => {
       </div>
 
       <div className="col-sm-8">
-        <h4>{displayName}</h4>
+        <h4>{idUser !== 0 ? `${displayName} ${idUser}` : "Chat vacio"}</h4>
         <hr className="separator" />
 
         {idUser !== 0 && (
           <ul className="list-group bgtransparent">
             {mocks.map((item, index) => (
-              <li className="list-group-item chat m-2" key={item}>
+              <li className="list-group-item chat_msg m-2" key={item}>
                 <div
                   className={`d-flex aling-item-center ${
                     index % 2 == 0 ? `flex-row-reverse` : `flex-row`
                   }`}
                 >
                   {index % 2 == 0 ? (
-                    <div className="chatSelect p-2">
-                       <span className="m-1">
-                        Non quas minus repellendus maxime quidem consequatur
-                        ipsam.
+                    <div className="msg p-2">
+                      <span className="m-1">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Quas, libero. Ab quos inventore rerum quo eos
+                        facere.
                       </span>
-                      <img
+                      <PhotoIcon
                         src={photoURL!}
                         alt={displayName!}
                         className="iconPerfil"
-                        width={35}
-                        height={35}
                       />
-                     
                     </div>
                   ) : (
-                    <div className="chatSelect p-2">
-                      <img
+                    <div className="msg p-2">
+                      <PhotoIcon
                         src={photoURL!}
                         alt={displayName!}
                         className="iconPerfil m-1"
-                        width={35}
-                        height={35}
                       />
                       <span>
                         Non quas minus repellendus maxime quidem consequatur
@@ -107,6 +102,18 @@ const MessagePage = () => {
                 </div>
               </li>
             ))}
+            <li className="list-group-item chat_msg m-2">
+              <form className="d-flex justify-content-between gap-2">
+                <input
+                  type="text"
+                  placeholder="Escribe tu mensaje"
+                  className="form-control"
+                />
+                <button type="submit" className="btn btn-danger btn-sm">
+                  <i className="fa-solid fa-paper-plane"></i>
+                </button>
+              </form>
+            </li>
           </ul>
         )}
       </div>

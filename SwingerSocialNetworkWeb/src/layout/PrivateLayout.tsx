@@ -1,6 +1,8 @@
 import { ReactElement } from "react";
-import { useAuthStore } from "../hooks";
 import { Link } from "react-router-dom";
+
+import { useAuthStore } from "../hooks";
+import { PhotoIcon } from "../components";
 
 interface Props {
   children: ReactElement | ReactElement[];
@@ -14,7 +16,7 @@ const PrivateLayout = ({ className = "privateLayout", children }: Props) => {
     <>
       <nav className="navbar navbar-expand-lg bgradial">
         <div className="container-fluid">
-          <Link className="navbar-brand" to="#">
+          <Link className="navbar-brand" to="/">
             Swingr
           </Link>
           <button
@@ -32,28 +34,26 @@ const PrivateLayout = ({ className = "privateLayout", children }: Props) => {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <Link className="nav-link" aria-current="page" to="/">
-                  Inicio <i className="fa-solid fa-house"></i>
+                  <i className="fa-solid fa-house"></i>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/message">
-                  Mensajes <i className="fa-solid fa-comment"></i>
+                  <i className="fa-solid fa-comment"></i>
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="#">
-                  Solicitudes <i className="fa-solid fa-users"></i>
+                <Link className="nav-link" to="/request">
+                  <i className="fa-solid fa-users"></i>
                 </Link>
               </li>
             </ul>
             <span className="navbar-text" onClick={onLogout}>
               {displayName!}{" "}
-              <img
+              <PhotoIcon
                 src={photoURL!}
                 alt={displayName!}
                 className="iconPerfil"
-                width={35}
-                height={35}
               />
             </span>
           </div>
