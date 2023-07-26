@@ -1,18 +1,32 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
-import { useAuthStore } from "../../hooks";
+import { useAuthStore, useGetDataRandom } from "../../hooks";
 import { PhotoIcon } from "../../components";
+import { User } from "../../hooks/useGetDataRandom";
 
 const mocks = [1, 2, 3, 4];
 
 const MessagePage = () => {
+  const { users } = useGetDataRandom();
   const { photoURL, displayName } = useAuthStore();
-
-  const [idUser, setIdUser] = useState(0);
+  const [filterUser, setFilterUser] = useState("");
+  const [user, setUser] = useState<undefined | User>();
 
   const handlerClick = (id: number) => {
-    setIdUser(id);
+    setUser(users.filter((p) => p.id === id)[0]);
   };
+
+  const lstUser = useMemo(() => {
+    if (filterUser !== "" && filterUser.length >= 1) {
+      return users.filter((p) =>
+        `${p.first_name} ${p.last_name}`
+          .toLocaleLowerCase()
+          .includes(filterUser)
+      );
+    } else {
+      return users;
+    }
+  }, [filterUser, users]);
 
   return (
     <div className="row">
@@ -26,28 +40,32 @@ const MessagePage = () => {
               type="search"
               placeholder="Buscar persona"
               className="form-control"
+              value={filterUser}
+              onChange={(event) => {
+                setFilterUser(event.target.value);
+              }}
             />
           </li>
-          {mocks.map((item) => (
+          {lstUser.map((item) => (
             <li
               className={`list-group-item chat ${
-                item === idUser && "chatSelect"
+                item.id === user?.id && "chatSelect"
               }`}
-              key={item}
-              onClick={() => handlerClick(item)}
+              key={item.id}
+              onClick={() => handlerClick(item.id)}
             >
               <div className="d-flex justify-content-between">
                 <div className="d-flex align-items-center ">
                   <PhotoIcon
-                    src={photoURL!}
-                    alt={displayName!}
+                    src={item.avatar!}
+                    alt={`${item.first_name} ${item.last_name}`}
                     className="iconPerfil"
                   />
                   <div>
                     <span className="mx-2">
-                      {displayName!}
+                      {`${item.first_name} ${item.last_name}`}
                       <br />
-                      <i className="mx-2">Mensaje ...</i>
+                      <i className="mx-2">Lorem ipsum dolor sit amet...</i>
                     </span>
                   </div>
                 </div>
@@ -61,10 +79,14 @@ const MessagePage = () => {
       </div>
 
       <div className="col-sm-8">
-        <h4>{idUser !== 0 ? `${displayName} ${idUser}` : "Chat vacio"}</h4>
+        <h4>
+          {user !== undefined
+            ? `${user.first_name} ${user.last_name}`
+            : "Chat vacio"}
+        </h4>
         <hr className="separator" />
 
-        {idUser !== 0 && (
+        {user !== undefined && (
           <ul className="list-group bgtransparent">
             {mocks.map((item, index) => (
               <li className="list-group-item chat_msg m-2" key={item}>
@@ -89,8 +111,8 @@ const MessagePage = () => {
                   ) : (
                     <div className="msg p-2">
                       <PhotoIcon
-                        src={photoURL!}
-                        alt={displayName!}
+                        src={user.avatar}
+                        alt={`${user.first_name} ${user.last_name}`}
                         className="iconPerfil m-1"
                       />
                       <span>

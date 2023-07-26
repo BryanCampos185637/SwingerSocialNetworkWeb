@@ -37,12 +37,25 @@
 .list-group-item {
   background: transparent;
 }
+
+.dropdown-menu {
+  background: var(--linearColor);
+}
+
+.dropdown-menu:hover a {
+  background: transparent !important;
+}
+
 /*END override css bootstrap*/
 
 .chat {
   border-color: transparent !important;
   cursor: pointer;
   margin-bottom: 0.1em;
+}
+.chat:hover {
+  box-shadow: var(--boxshadow);
+  transition: 0.6s;
 }
 
 .chat_msg {
@@ -51,9 +64,20 @@
   margin-bottom: 0.1em;
 }
 
-.chat:hover {
+.request {
+  border-color: transparent !important;
+  margin-bottom: 0.1em;
+  font-weight: 300;
+}
+
+.request:hover {
   box-shadow: var(--boxshadow);
-  transition: 0.6s;
+}
+
+.request:hover span {
+  letter-spacing: 0.2em;
+  font-weight: 500;
+  transition: 0.5s;
 }
 
 .chatSelect {
@@ -63,8 +87,7 @@
   transition: 0.6s;
 }
 
-
-.msg{
+.msg {
   border-radius: 25px;
   box-shadow: var(--boxshadow);
   padding: 1rem;
@@ -151,8 +174,8 @@ h6 {
   cursor: pointer;
 }
 
-.box_add_publication{
-  box-shadow: var(--boxshadow);
+.shadow {
+  box-shadow: var(--boxshadow) !important;
 }
 
 @media (max-width: 850px) {

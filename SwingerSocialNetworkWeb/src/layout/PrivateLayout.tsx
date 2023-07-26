@@ -14,7 +14,10 @@ const PrivateLayout = ({ className = "privateLayout", children }: Props) => {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg bgradial">
+      <nav
+        className="navbar navbar-expand-lg bgradial"
+        style={{ position: "fixed", width: "100%", zIndex: 1000 }}
+      >
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
             Swingr
@@ -59,7 +62,9 @@ const PrivateLayout = ({ className = "privateLayout", children }: Props) => {
           </div>
         </div>
       </nav>
-      <div className={className}>{children}</div>
+      <section className={`${className}`}>
+        <br /><br /><br />
+        {children}</section>
     </>
   );
 };

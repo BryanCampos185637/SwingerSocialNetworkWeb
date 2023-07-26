@@ -9,5 +9,5 @@ export const PublicLayout = ({
   children,
   className = "publicLayout",
 }: Props) => {
-  return <div className={className}>{children}</div>;
+  return <section className={className}>{children}</section>;
 };
