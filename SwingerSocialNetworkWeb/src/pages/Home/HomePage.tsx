@@ -65,7 +65,7 @@ const HomePage = () => {
                     <img
                       src={getUrlImageRandom()}
                       alt={`Imagen random`}
-                      style={{ borderRadius: "10px",maxHeight:'50vh' }}
+                      style={{ borderRadius: "10px", maxHeight: "50vh" }}
                     />
                     <hr className="separator" />
                   </div>

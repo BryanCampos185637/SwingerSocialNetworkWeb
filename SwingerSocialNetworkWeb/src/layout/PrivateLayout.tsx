@@ -50,21 +50,34 @@ const PrivateLayout = ({ className = "privateLayout", children }: Props) => {
                   <i className="fa-solid fa-users"></i>
                 </Link>
               </li>
+
+              <li className="nav-item">
+                <a
+                  className="nav-link"
+                  onClick={onLogout}
+                  style={{ cursor: "pointer" }}
+                >
+                  <i className="fa-solid fa-circle-xmark"></i>
+                </a>
+              </li>
             </ul>
-            <span className="navbar-text" onClick={onLogout}>
+            <Link className="navbar-text" to={"/profile"}>
               {displayName!}{" "}
               <PhotoIcon
                 src={photoURL!}
                 alt={displayName!}
                 className="iconPerfil"
               />
-            </span>
+            </Link>
           </div>
         </div>
       </nav>
       <section className={`${className}`}>
-        <br /><br /><br />
-        {children}</section>
+        <br />
+        <br />
+        <br />
+        {children}
+      </section>
     </>
   );
 };

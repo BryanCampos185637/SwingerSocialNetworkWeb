@@ -9,6 +9,7 @@
   --boxshadow: 0px 0px 10px rgba(204, 65, 65, 0.9);
   --radialcolor: radial-gradient(#272727, #1a1919, #000);
   --linearColor: linear-gradient(var(--red02), var(--red03));
+  --blackligth: #1b1b1b;
 }
 
 /*INIT override css bootstrap*/
@@ -44,6 +45,10 @@
 
 .dropdown-menu:hover a {
   background: transparent !important;
+}
+
+.btn-close {
+  color: var(--red06) !important;
 }
 
 /*END override css bootstrap*/
@@ -166,9 +171,16 @@ h6 {
 }
 
 .bgradial {
+  background: var(--radialcolor);
+}
+
+.bglinear {
   background: var(--linearColor);
 }
 
+.bgblackligth{
+  background: var(--blackligth);
+}
 .iconPerfil {
   border-radius: 50%;
   cursor: pointer;

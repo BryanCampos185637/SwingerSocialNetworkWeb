@@ -1,9 +1,9 @@
 import { useAuthStore } from "../../hooks";
 import { CardAccount } from "./components/CardAccount";
+import ModalRegister from "./components/ModalRegister";
 
 const LoginPage = () => {
-
-  const {onLoginWhitGoogle}= useAuthStore();
+  const { onLoginWhitGoogle } = useAuthStore();
 
   return (
     <>
@@ -41,7 +41,11 @@ const LoginPage = () => {
               className="d-flex justify-content-center gap-1 mt-1"
               id="btn_social_network"
             >
-              <button type="button" className="btn  btn-danger btn-sm mt-2 btn-block" onClick={onLoginWhitGoogle}>
+              <button
+                type="button"
+                className="btn  btn-danger btn-sm mt-2 btn-block"
+                onClick={onLoginWhitGoogle}
+              >
                 Iniciar con Google
                 <i className="fa-brands fa-google mx-1"></i>
               </button>
@@ -51,10 +55,18 @@ const LoginPage = () => {
               </button>
             </div>
             <hr className="separator" />
-            <p className="mt-3">No tienes cuenta registrate aquí</p>
+            <p
+              className="mt-3"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              style={{ cursor: "pointer" }}
+            >
+              No tienes cuenta registrate aquí
+            </p>
           </center>
         </form>
       </CardAccount>
+      <ModalRegister />
     </>
   );
 };

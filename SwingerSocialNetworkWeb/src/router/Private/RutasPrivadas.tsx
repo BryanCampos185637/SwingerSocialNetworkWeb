@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 
-import { HomePage, MessagePage, RequestsPage } from "../../pages";
+import { HomePage, MessagePage, ProfilePage, RequestsPage } from "../../pages";
 import PrivateLayout from "../../layout/PrivateLayout";
 
 const RutasPrivadas = () => {
@@ -10,6 +10,7 @@ const RutasPrivadas = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/message" element={<MessagePage />} />
         <Route path="/request" element={<RequestsPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
         <Route path="/*" element={<Navigate to={"/"} />} />
       </Routes>
     </PrivateLayout>
