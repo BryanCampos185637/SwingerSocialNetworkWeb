@@ -10,18 +10,19 @@
   --radialcolor: radial-gradient(#272727, #1a1919, #000);
   --linearColor: linear-gradient(var(--red02), var(--red03));
   --blackligth: #1b1b1b;
+  --gray:#272727;
 }
 
 /*INIT override css bootstrap*/
 .btn {
-  border-radius: 25px;
-  background: transparent;
-  border-color: var(--red05);
+  border-radius: 7px;
+  background: var(--red04);
+  border-color: var(--red03);
   color: var(--red06);
 }
 
 .btn:hover {
-  background: var(--red04);
+  background: var(--red05);
   border-color: var(--red00);
   color: var(--red06);
 }
@@ -49,6 +50,26 @@
 
 .btn-close {
   color: var(--red06) !important;
+}
+
+
+.nav-link {
+  transition: 0.5s;
+}
+
+.nav-item:hover .nav-link {
+  padding-left: 0.5em;
+  letter-spacing: 0.2em;
+  transform: scale(1);
+}
+
+.navbar-toggler{
+  color: var(--red06);
+  border-color: var(--red05);
+}
+
+.navbar-toggler span{
+  color: var(--red06);
 }
 
 /*END override css bootstrap*/
@@ -190,6 +211,13 @@ h6 {
   box-shadow: var(--boxshadow) !important;
 }
 
+.profile_row{
+}
+
+.opt_profile{
+  background:var(--gray);
+}
+
 @media (max-width: 850px) {
   .publicLayout {
     flex-direction: column;
@@ -211,4 +239,9 @@ h6 {
     align-items: center;
     flex-direction: column;
   }
+
+  .opt_profile{
+    display: none;
+  }
 }
+
