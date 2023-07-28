@@ -1,3 +1,5 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 import { PhotoIcon } from "../../components";
 import { useAuthStore, useGetDataRandom } from "../../hooks";
 
@@ -62,7 +64,8 @@ const HomePage = () => {
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Laboriosam beatae sapiente.
                     </p>
-                    <img
+                    <LazyLoadImage
+                      className="animate__animated animate__fadeIn"
                       src={getUrlImageRandom()}
                       alt={`Imagen random`}
                       style={{ borderRadius: "10px", maxHeight: "50vh" }}
@@ -70,14 +73,14 @@ const HomePage = () => {
                     <hr className="separator" />
                   </div>
                   {/*botones*/}
-                  <div className="d-flex justify-content-between gap-3 mt-2">
-                    <button className="btn btn-sm btn-danger">
+                  <div className="d-flex justify-content-between gap-1 mt-2">
+                    <button className="btn btn-sm btn-danger btn-block">
                       Me gusta <i className="fa-solid fa-thumbs-up"></i>
                     </button>
-                    <button className="btn btn-sm btn-danger">
+                    <button className="btn btn-sm btn-danger btn-block">
                       Comentar <i className="fa-solid fa-comment"></i>
                     </button>
-                    <button className="btn btn-sm btn-danger">
+                    <button className="btn btn-sm btn-danger btn-block">
                       Compartir <i className="fa-solid fa-share"></i>
                     </button>
                   </div>

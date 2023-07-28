@@ -1,7 +1,8 @@
 import { memo, useCallback, useRef } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import { useAuthStore } from "../hooks";
+import NavLinkMenu from "./NavLinkMenu";
 
 const Menu = () => {
   const btnToggle = useRef<any>(null);
@@ -15,9 +16,9 @@ const Menu = () => {
   return (
     <nav className="navbar bg-body-tertiary bglinear">
       <div className="container-fluid">
-        <Link to={"/"} className="navbar-brand">
+        <NavLink to={"/"} className="navbar-brand">
           Swingr
-        </Link>
+        </NavLink>
         <button
           ref={btnToggle}
           className="navbar-toggler"
@@ -30,7 +31,7 @@ const Menu = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div
-          className="offcanvas offcanvas-end bglinear"
+          className="offcanvas offcanvas-end bgblackligth"
           id="offcanvasNavbar"
           aria-labelledby="offcanvasNavbarLabel"
         >
@@ -47,31 +48,33 @@ const Menu = () => {
           </div>
           <div className="offcanvas-body">
             <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li className="nav-item">
-                <Link
-                  className="nav-link"
-                  aria-current="page"
-                  to="/"
-                  onClick={toggleMenu}
-                >
-                  <i className="fa-solid fa-house"></i> Inicio
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/message" onClick={toggleMenu}>
-                  <i className="fa-solid fa-comment"></i> Mensajes
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/request" onClick={toggleMenu}>
-                  <i className="fa-solid fa-users"></i> Solicitudes
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/profile" onClick={toggleMenu}>
-                  <i className="fa-solid fa-user"></i> Perfil
-                </Link>
-              </li>
+              <NavLinkMenu
+                to="/"
+                onClick={toggleMenu}
+                icon="fa-solid fa-house"
+                title="Inicio"
+              />
+              <NavLinkMenu
+                to="/message"
+                onClick={toggleMenu}
+                icon="fa-solid fa-comment"
+                title="Mensajes"
+              />
+
+              <NavLinkMenu
+                to="/request"
+                onClick={toggleMenu}
+                icon="fa-solid fa-users"
+                title="Solicitudes"
+              />
+
+              <NavLinkMenu
+                to="/profile"
+                onClick={toggleMenu}
+                icon="fa-solid fa-user"
+                title="Perfil"
+              />
+
               <li className="nav-item">
                 <span
                   className="nav-link"
