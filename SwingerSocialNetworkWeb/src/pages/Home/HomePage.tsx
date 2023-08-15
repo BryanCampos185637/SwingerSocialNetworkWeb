@@ -65,10 +65,9 @@ const HomePage = () => {
                       Laboriosam beatae sapiente.
                     </p>
                     <LazyLoadImage
-                      className="animate__animated animate__fadeIn"
+                      className="animate__animated animate__fadeIn imagePost"
                       src={getUrlImageRandom()}
                       alt={`Imagen random`}
-                      style={{ borderRadius: "10px", maxHeight: "50vh" }}
                     />
                     <hr className="separator" />
                   </div>

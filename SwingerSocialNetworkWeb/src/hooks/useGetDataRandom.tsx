@@ -13,7 +13,7 @@ const useGetDataRandom = (page = 1) => {
 
   const getUrlImageRandom = () => {
     const idrandom = Math.floor(Math.random() * 60);
-    return `https://picsum.photos/id/${idrandom === 0 ? 1 : idrandom}/300/300`;
+    return `https://picsum.photos/id/${idrandom === 0 ? 1 : idrandom}/1024/1024`;
   };
 
   const getUrlWallpaperRandom = () => {

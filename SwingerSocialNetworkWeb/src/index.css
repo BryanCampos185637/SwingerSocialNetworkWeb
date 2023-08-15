@@ -248,6 +248,12 @@ h6 {
   border-color: #e31220;
 }
 
+.imagePost{
+  border-radius: 10px;
+  max-height: 50vh;
+  object-fit: cover;
+}
+
 @media (max-width: 850px) {
   .publicLayout {
     flex-direction: column;
