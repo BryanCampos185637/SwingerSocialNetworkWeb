@@ -4,7 +4,7 @@ import { useAuthStore, useGetDataRandom } from "../../hooks";
 import { PhotoIcon } from "../../components";
 import { User } from "../../hooks/useGetDataRandom";
 
-const mocks = [1, 2, 3, 4];
+const mocks = [1, 2, 3, 4, 5, 6, 7];
 
 const MessagePage = () => {
   const { users } = useGetDataRandom();
@@ -30,7 +30,7 @@ const MessagePage = () => {
 
   return (
     <div className="row">
-      <div className="col-sm-4">
+      <article className="col-sm-4 mt-3">
         <h4>Chat</h4>
         <hr className="separator" />
         <ul className="list-group bgtransparent">
@@ -76,9 +76,9 @@ const MessagePage = () => {
             </li>
           ))}
         </ul>
-      </div>
+      </article>
 
-      <div className="col-sm-8">
+      <article className="col-sm-8 mt-3">
         <h4>
           {user !== undefined
             ? `${user.first_name} ${user.last_name}`
@@ -138,7 +138,7 @@ const MessagePage = () => {
             </li>
           </ul>
         )}
-      </div>
+      </article>
     </div>
   );
 };

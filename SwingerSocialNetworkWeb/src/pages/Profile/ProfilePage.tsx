@@ -7,26 +7,26 @@ const ProfilePage = () => {
   const { photoURL, displayName, email } = useAuthStore();
 
   return (
-    <section className="container">
+    <div className="container">
       <div className="row justify-content-center">
-        <div className="col-sm-12 col-md-9 mt-3">
+        <article className="col-sm-12 col-md-9 mt-3">
           <LazyLoadImage
             className="border_radius shadow"
             src={getUrlWallpaperRandom()}
             width={"100%"}
             style={{ opacity: "0.8" }}
           />
-        </div>
-        <div className="col-sm-12 col-md-9 d-flex justify-content-center align-items-start content_img_profile">
+        </article>
+        <article className="col-sm-12 col-md-9 d-flex justify-content-center align-items-start content_img_profile">
           <div className="d-flex flex-column justify-content-center">
             <LazyLoadImage
-              className="border_radius shadow"
+              className="border_radius shadow mb-3"
               src={photoURL!}
               alt={`Foto de perfil ${displayName}`}
             />
             <p>{displayName}</p>
           </div>
-          <div style={{ position: "absolute", marginTop: "25vh" }}>
+          <div style={{ position: "absolute", marginTop: "180px" }}>
             <p className="my-description">
               Soy un hombre felizmente casado, junto a mi esposa nos gusta
               disfrutar de nuevas experiencias sexuales con otras parejas o
@@ -47,34 +47,25 @@ const ProfilePage = () => {
             <div>
               <ul className="nav nav-pills nav-fill">
                 <li className="nav-item">
-                  <button
-                    className="nav-link nav_select"
-                    aria-current="page"
-                  >
+                  <button className="nav-link nav_select" aria-current="page">
                     Mi perfil
                   </button>
                 </li>
                 <li className="nav-item">
-                  <button className="nav-link">
-                    Información personal
-                  </button>
+                  <button className="nav-link">Información personal</button>
                 </li>
                 <li className="nav-item">
-                  <button className="nav-link">
-                    Fotos
-                  </button>
+                  <button className="nav-link">Fotos</button>
                 </li>
                 <li className="nav-item">
-                  <button className="nav-link">
-                    Videos
-                  </button>
+                  <button className="nav-link">Videos</button>
                 </li>
               </ul>
             </div>
           </div>
-        </div>
+        </article>
       </div>
-    </section>
+    </div>
   );
 };
 

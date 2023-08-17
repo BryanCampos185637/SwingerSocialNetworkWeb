@@ -10,7 +10,7 @@ const HomePage = () => {
   return (
     <div className="container">
       <div className="row justify-content-center">
-        <div className="col-sm-12 col-md-7 mt-3">
+        <article className="col-sm-12 col-md-7 mt-3">
           <div className="card shadow bgtransparent">
             <div className="card-body">
               <h5>¿Que estas pensando?</h5>
@@ -34,13 +34,13 @@ const HomePage = () => {
               </div>
             </div>
           </div>
-        </div>
+        </article>
       </div>
       {/*publicaciones de los amigos*/}
       <div className="row justify-content-center mt-3">
         {users.map((item) => {
           return (
-            <div className="col-sm-12 col-md-7 mt-4" key={item.id}>
+            <article className="col-sm-12 col-md-7 mt-4" key={item.id}>
               <div className="card bgtransparent shadow">
                 <div className="card-body">
                   {/*acciones*/}
@@ -85,7 +85,7 @@ const HomePage = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </article>
           );
         })}
       </div>
