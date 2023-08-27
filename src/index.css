@@ -25,10 +25,28 @@ body {
   background: var(--radialcolor);
 }
 
+main {
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
 #root {
   position: relative;
 }
 /*INIT override css bootstrap*/
+
+.container {
+  max-height: 90vh;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  padding-bottom: 6vh;
+}
+
+.container::-webkit-scrollbar {
+  width: 0;
+}
+
 .btn {
   border-radius: 7px;
   background: var(--red04);
@@ -279,8 +297,8 @@ h6 {
 }
 
 .menu {
-  min-height: 6vh;
-  max-height: 6vh;
+  min-height: 8.5vh !important;
+  max-height: 8.5vh !important;
 }
 
 @media (max-width: 850px) {
