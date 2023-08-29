@@ -3,7 +3,7 @@ import { CardAccount } from "./components/CardAccount";
 import ModalRegister from "./components/ModalRegister";
 
 const LoginPage = () => {
-  const { onLoginWhitGoogle } = useAuthStore();
+  const { onLoginWhitGoogle, onLoginWhitFacebook } = useAuthStore();
 
   return (
     <>
@@ -33,7 +33,10 @@ const LoginPage = () => {
             />
           </div>
           <center>
-            <button className="btn btn-danger btn-sm mt-3 btn-block">
+            <button
+              type="button"
+              className="btn btn-danger btn-sm mt-3 btn-block"
+            >
               Iniciar sesión
               <i className="fa-solid fa-paper-plane mx-1"></i>
             </button>
@@ -49,7 +52,11 @@ const LoginPage = () => {
                 Iniciar con Google
                 <i className="fa-brands fa-google mx-1"></i>
               </button>
-              <button className="btn  btn-danger btn-sm mt-2 btn-block">
+              <button
+                type="button"
+                className="btn  btn-danger btn-sm mt-2 btn-block"
+                onClick={() => onLoginWhitFacebook()}
+              >
                 Iniciar con Facebook
                 <i className="fa-brands fa-facebook mx-1"></i>
               </button>

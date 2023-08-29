@@ -7,6 +7,7 @@ export interface Auth {
   displayName?: string | undefined | null;
   photoURL?: string | undefined | null;
   status?: "checking" | "not-authenticated" | "authenticated";
+  providerData: string;
 }
 
 const initialState: Auth = {
@@ -15,6 +16,7 @@ const initialState: Auth = {
   displayName: "",
   photoURL: "",
   status: "checking",
+  providerData: "",
 };
 
 export const authSlice = createSlice({
@@ -27,6 +29,7 @@ export const authSlice = createSlice({
       state.displayName = payload.displayName;
       state.photoURL = payload.photoURL;
       state.status = "authenticated";
+      state.providerData = payload.providerData;
     },
     logout: (state) => {
       state.uid = "";
@@ -34,6 +37,7 @@ export const authSlice = createSlice({
       state.displayName = "";
       state.photoURL = "";
       state.status = "not-authenticated";
+      state.providerData = "";
     },
   },
 });

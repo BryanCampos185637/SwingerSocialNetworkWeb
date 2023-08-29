@@ -8,7 +8,7 @@ const HomePage = () => {
   const { users, getUrlImageRandom } = useGetDataRandom();
 
   return (
-    <div className="container">
+    <div className="container scroll-static pb-vh10">
       <div className="row justify-content-center">
         <article className="col-sm-12 col-md-7 mt-3">
           <div className="card shadow bgtransparent">

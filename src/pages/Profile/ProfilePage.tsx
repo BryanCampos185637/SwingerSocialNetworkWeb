@@ -7,7 +7,7 @@ const ProfilePage = () => {
   const { photoURL, displayName, email } = useAuthStore();
 
   return (
-    <div className="container">
+    <div className="container scroll-static pb-10vh">
       <div className="row justify-content-center">
         <article className="col-sm-12 col-md-9 mt-3">
           <LazyLoadImage

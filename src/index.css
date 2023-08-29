@@ -19,6 +19,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -34,18 +35,39 @@ main {
 #root {
   position: relative;
 }
-/*INIT override css bootstrap*/
 
-.container {
+.scroll-static {
+  background: transparent;
   max-height: 90vh;
   overflow-y: scroll;
   scrollbar-width: none;
   padding-bottom: 6vh;
 }
 
-.container::-webkit-scrollbar {
+.scroll-static::-webkit-scrollbar {
   width: 0;
 }
+
+.pb-10vh {
+  padding-bottom: 10vh;
+}
+
+.pb-20vh {
+  padding-bottom: 20vh;
+}
+
+.pb-30vh {
+  padding-bottom: 30vh;
+}
+
+.pb-40vh {
+  padding-bottom: 40vh;
+}
+
+.pb-50vh {
+  padding-bottom: 50vh;
+}
+/*INIT override css bootstrap*/
 
 .btn {
   border-radius: 7px;
@@ -299,6 +321,12 @@ h6 {
 .menu {
   min-height: 8.5vh !important;
   max-height: 8.5vh !important;
+}
+
+.form-chat {
+  width: 100%;
+  bottom: 10vh;
+  left: 0;
 }
 
 @media (max-width: 850px) {

@@ -4,7 +4,7 @@ import { useAuthStore, useGetDataRandom } from "../../hooks";
 import { PhotoIcon } from "../../components";
 import { User } from "../../hooks/useGetDataRandom";
 
-const mocks = [1, 2, 3, 4, 5, 6, 7];
+const mocks = [1, 2, 3, 4, 5, 6];
 
 const MessagePage = () => {
   const { users } = useGetDataRandom();
@@ -30,15 +30,15 @@ const MessagePage = () => {
 
   return (
     <div className="row">
-      <article className="col-sm-4 mt-3">
+      <article className="col-sm-4 mt-3 ">
         <h4>Chat</h4>
         <hr className="separator" />
-        <ul className="list-group bgtransparent">
+        <ul className="list-group bgtransparent scroll-static pb-10vh">
           <li className="list-group-item chat_msg">
             <label htmlFor="">Buscar</label>
             <input
               type="search"
-              placeholder="Buscar persona"
+              placeholder="Buscar amigo"
               className="form-control"
               value={filterUser}
               onChange={(event) => {
@@ -78,7 +78,7 @@ const MessagePage = () => {
         </ul>
       </article>
 
-      <article className="col-sm-8 mt-3">
+      <article className="col-sm-8 mt-3 relative" >
         <h4>
           {user !== undefined
             ? `${user.first_name} ${user.last_name}`
@@ -87,7 +87,7 @@ const MessagePage = () => {
         <hr className="separator" />
 
         {user !== undefined && (
-          <ul className="list-group bgtransparent">
+          <ul className="list-group bgtransparent scroll-static pb-20vh">
             {mocks.map((item, index) => (
               <li className="list-group-item chat_msg m-2" key={item}>
                 <div
@@ -124,8 +124,10 @@ const MessagePage = () => {
                 </div>
               </li>
             ))}
-            <li className="list-group-item chat_msg m-2">
-              <form className="d-flex justify-content-between gap-2">
+            <li
+              className="list-group-item chat_msg m-2 bgblackligth form-chat absolute"
+            >
+              <form className="d-flex justify-content-evenly gap-2 p-1">
                 <input
                   type="text"
                   placeholder="Escribe tu mensaje"

@@ -17,7 +17,7 @@ const Menu = () => {
     <header>
       <nav className="navbar bg-body-tertiary bglinear menu fixed-top">
         <div className="container-fluid">
-          <NavLink to={"/"} className="navbar-brand">
+          <NavLink to={"/"} className="navbar-brand" style={{fontWeight:'bold', letterSpacing:'2px'}}>
             Swingr
           </NavLink>
           <button
